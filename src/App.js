@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import TestMap from './Components/Pages/Map';
-import { mask } from './API/MainAPI';
+import useFetch from './Hooks/useFetch';
 
 function App() {
-  const handleClick = async () => {
-    const { data } = await mask.getMask();
-    console.log(data);
+  const [state] = useFetch();
+  const handleClick = () => {
+    console.log(state);
   };
   return (
     <div className="App">

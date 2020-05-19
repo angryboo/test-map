@@ -1,18 +1,29 @@
 /* global kakao */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Map.css';
 
 function TestMap() {
+  const [_map, setState] = useState({});
   useEffect(() => {
     const container = document.getElementById('map');
     const options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
+      center: new kakao.maps.LatLng(37.544579, 127.056045),
       level: 3,
     };
     const map = new kakao.maps.Map(container, options);
-    console.log(map);
+    setState(map);
   }, []);
-  return <div id="map" />;
+  return (
+    <div>
+      <button type="button" onClick={() => console.log(_map.getCenter())}>
+        bbbb
+      </button>
+      <button type="button" onClick={() => console.log(_map.I)}>
+        bvvvv
+      </button>
+      <div id="map" />
+    </div>
+  );
 }
 
 export default TestMap;
