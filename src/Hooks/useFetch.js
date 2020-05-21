@@ -1,6 +1,6 @@
 import { useReducer, useEffect, useCallback } from 'react';
 import { initialState, reducer } from '../Reducer/Reducer';
-import { stores } from '../API/MainAPI';
+import { stores } from '../API/StoresAPI';
 
 const useFetch = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -37,6 +37,7 @@ const useFetch = () => {
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
   return [state, fetchData];
 };
 
