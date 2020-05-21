@@ -18,7 +18,8 @@ function TestMap() {
     });
 
     setState(craeteMap);
-  }, [kakao.maps.LatLng, kakao.maps.Map, kakao.maps.event]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   console.dir(kakao.maps);
 
